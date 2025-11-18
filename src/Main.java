@@ -1,7 +1,19 @@
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
+
+        //6.1
+        Point point1 = new Point(1, 3);
+        Point point2 = new Point(1, 3);
+        Point point3 = new Point(5, 8);
+
+        System.out.println("Point1: " + point1.toString());
+        System.out.println("Point2: " + point2.toString());
+        System.out.println("Point3: " + point3.toString());
+
+        System.out.println("Point1==Point2: " + compare2Points(point1, point2));
+        System.out.println("Point1==Point3: " + compare2Points(point1, point3));
+        System.out.println("Point2==Point3: " + compare2Points(point2, point3));
+
 //        //4.1
 //        double fraction = Module4.fraction(4.563136);
 //        System.out.println("fraction: " + Math.round(fraction * 1000f) / 1000f);
@@ -188,5 +200,9 @@ public class Main {
 //        int[] modifiedArrIns = Module5.add(arr, arr2, 6);
 //        System.out.println("modifiedArrIns: " + Arrays.toString(modifiedArrIns));
 
+    }
+
+    public static boolean compare2Points(Point firstPoint, Point secondPoint) {
+        return firstPoint.x == secondPoint.x && firstPoint.y == secondPoint.y;
     }
 }
