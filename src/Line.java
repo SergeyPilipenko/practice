@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Line {
     Point startPoint;
     Point endPoint;
@@ -12,11 +14,6 @@ public class Line {
         this.endPoint = new Point(endX, endY);
     }
 
-    @Override
-    public String toString() {
-        return "Линия от " + this.startPoint.toString() + " до " + this.endPoint.toString();
-    }
-
     public double getLength() {
 
         int deltaX = this.endPoint.x - this.startPoint.x;
@@ -24,5 +21,10 @@ public class Line {
         double length = Math.sqrt(Math.pow(deltaX, 2) + Math.pow(deltaY, 2));
 
         return Math.round(length * 1000) / 1000d;
+    }
+
+    @Override
+    public String toString() {
+        return "Линия от " + this.startPoint.toString() + " до " + this.endPoint.toString();
     }
 }
