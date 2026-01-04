@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class PolyLine {
+public class PolyLine implements Measurable {
 
     Point[] pointsArr;
     List<Line> linesArr;
@@ -40,6 +40,6 @@ public class PolyLine {
 
     @Override
     public String toString() {
-        return "Линия " + Arrays.toString(pointsArr);
+        return "Ломанная Линия " + Arrays.toString(pointsArr);
     }
 }

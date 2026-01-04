@@ -1,6 +1,4 @@
-import java.util.List;
-
-public class Line {
+public class Line implements Measurable {
     Point startPoint;
     Point endPoint;
 
