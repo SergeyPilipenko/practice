@@ -2,6 +2,14 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+
+        Square square = new Square(2, 5, 1);
+        System.out.println(square);
+
+        square.setCoordinate(new Point(4, 8));
+        square.setSideLength(6);
+        System.out.println(square);
+
         Fraction f1 = new Fraction(1, 3);
         Fraction f2 = new Fraction(2, 5);
         Fraction f3 = new Fraction(7, 8);
