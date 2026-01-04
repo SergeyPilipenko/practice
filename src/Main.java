@@ -1,25 +1,33 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
-        //6.2
-        Point startPoint = new Point(1, 3);
-        Point endPoint = new Point(5, 8);
+        //6.3
+        PolyLine polyLine = new PolyLine(
+                new Point(1, 5),
+                new Point(2, 8),
+                new Point(5, 3),
+                new Point(9, 9));
 
-        Line line1 = new Line(startPoint, endPoint);
-        Line line2 = new Line(10, 11, 15, 19);
-        Line line3 = new Line(line1.endPoint, line2.startPoint);
+        System.out.println("До PolyLine: " + polyLine.toString());
+        System.out.println("Длина ломанной: " + polyLine.getLength());
 
-        System.out.println("До: Line3 - " + line3.toString());
+        Line[] lines = polyLine.getLines();
+        System.out.println("Массив линий: " + Arrays.toString(lines));
 
-        line3.startPoint.x = 6;
-        line3.startPoint.y = 9;
+        double lengthSum = 0;
 
-        line3.endPoint.x = 11;
-        line3.endPoint.x = 12;
+        for (Line line : lines) {
+            lengthSum += line.getLength();
+        }
+        System.out.println("Суммарная длина линий: " + lengthSum);
+        System.out.println("Длина ломанной равна суммарной длине линий: " + (polyLine.getLength() == lengthSum));
 
-        System.out.println("После: Line3 - " + line3.toString());
+        polyLine.pointsArr[1].x = 12;
 
-        double lengthSum = line1.getLength() + line2.getLength() + line3.getLength();
-        System.out.println("Суммарная длина всех трех линий: " + lengthSum);
+        System.out.println("После PolyLine: " + polyLine.toString());
+        lines = polyLine.getLines();
+        System.out.println("Массив линий: " + Arrays.toString(lines));
     }
 }
