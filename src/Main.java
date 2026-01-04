@@ -2,7 +2,12 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+        Fraction f1 = new Fraction(1, 3);
+        Fraction f2 = new Fraction(2, 5);
+        Fraction f3 = new Fraction(7, 8);
 
+        Fraction frSum = f1.sum(f2).sum(f3).minus(5);
+        System.out.println(frSum.toString());
         //6.3
         PolyLine polyLine = new PolyLine(
                 new Point(1, 5),
