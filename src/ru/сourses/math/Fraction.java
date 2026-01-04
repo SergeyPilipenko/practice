@@ -1,3 +1,5 @@
+package ru.сourses.math;
+
 public class Fraction {
     private int numerator;
     private int denominator;

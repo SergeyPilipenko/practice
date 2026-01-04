@@ -1,10 +1,12 @@
+package ru.сourses.geometry;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class PolyLine {
 
-    Point[] pointsArr;
+    public Point[] pointsArr;
     List<Line> linesArr;
 
     public PolyLine() {

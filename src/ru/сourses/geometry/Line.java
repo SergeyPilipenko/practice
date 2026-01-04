@@ -1,4 +1,4 @@
-import java.util.List;
+package ru.сourses.geometry;
 
 public class Line {
     Point startPoint;

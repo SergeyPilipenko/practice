@@ -1,4 +1,4 @@
-import java.util.Locale;
+package ru.сourses.basics;
 
 public class Module4 {
 

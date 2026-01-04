@@ -1,5 +1,7 @@
+package ru.сourses.geometry;
+
 public class Point {
-    int x;
+    public int x;
     int y;
 
     public Point(int x, int y) {

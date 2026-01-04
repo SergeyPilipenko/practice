@@ -1,3 +1,10 @@
+package ru.сourses.main;
+import  ru.сourses.basics.*;
+import  ru.сourses.geometry.*;
+import  ru.сourses.math.*;
+import  ru.сourses.people.*;
+
+
 import java.util.Arrays;
 
 public class Main {
@@ -60,7 +67,7 @@ public class Main {
                 new Point(5, 3),
                 new Point(9, 9));
 
-        System.out.println("До PolyLine: " + polyLine.toString());
+        System.out.println("До ru.сourses.geometry.PolyLine: " + polyLine.toString());
         System.out.println("Длина ломанной: " + polyLine.getLength());
 
         Line[] lines = polyLine.getLines();
@@ -76,7 +83,7 @@ public class Main {
 
         polyLine.pointsArr[1].x = 12;
 
-        System.out.println("После PolyLine: " + polyLine.toString());
+        System.out.println("После ru.сourses.geometry.PolyLine: " + polyLine.toString());
         lines = polyLine.getLines();
         System.out.println("Массив линий: " + Arrays.toString(lines));
     }

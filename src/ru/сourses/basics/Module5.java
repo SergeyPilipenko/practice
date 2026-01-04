@@ -1,3 +1,5 @@
+package ru.сourses.basics;
+
 public class Module5 {
 
     // 5.1
