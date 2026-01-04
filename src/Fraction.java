@@ -12,21 +12,21 @@ class Fraction extends Number {
 
     @Override
     public int intValue() {
-        return num/denum;
+        return num / denum;
     }
 
     @Override
     public long longValue() {
-        return num/denum;
+        return num / denum;
     }
 
     @Override
     public float floatValue() {
-        return (float) num /denum;
+        return (float) num / denum;
     }
 
     @Override
     public double doubleValue() {
-        return (double) num /denum;
+        return (double) num / denum;
     }
 }
