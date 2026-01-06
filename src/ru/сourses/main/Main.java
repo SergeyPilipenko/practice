@@ -1,26 +1,36 @@
 package ru.сourses.main;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Введите числа через пробел: ");
-        String inputStr = scanner.nextLine();
-        String[] nums = inputStr.split(" ");
-
+        List<Double> nums = new ArrayList<>();
         double sum = 0;
 
-        for (String num : nums) {
+        System.out.println("Для завершения ввода чисел введите: exit");
+        while (true) {
+
+            System.out.print("Введите число: ");
+
+            String inputStr = scanner.nextLine();
+            if (inputStr.equals("exit")) break;
+
             double numDouble;
             try {
-                numDouble = Double.parseDouble(num);
+                numDouble = Double.parseDouble(inputStr);
             } catch (NumberFormatException e) {
-                numDouble = 0;
+                System.out.println("Это не число");
+                continue;
             }
 
-            sum += numDouble;
+            nums.add(numDouble);
+        }
+
+        for (double num : nums) {
+            sum += num;
         }
 
         System.out.println("Сумма: " + sum);
