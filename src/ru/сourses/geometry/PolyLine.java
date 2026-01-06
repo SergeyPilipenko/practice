@@ -3,6 +3,7 @@ package ru.сourses.geometry;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class PolyLine {
 
@@ -43,5 +44,23 @@ public class PolyLine {
     @Override
     public String toString() {
         return "Линия " + Arrays.toString(pointsArr);
+    }
+
+    @Override
+    public PolyLine clone() {
+        PolyLine p = new PolyLine(pointsArr);
+        return p;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        PolyLine polyLine = (PolyLine) o;
+        return Objects.deepEquals(pointsArr, polyLine.pointsArr) && Objects.equals(linesArr, polyLine.linesArr);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Arrays.hashCode(pointsArr), linesArr);
     }
 }

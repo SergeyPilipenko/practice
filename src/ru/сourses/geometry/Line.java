@@ -1,5 +1,7 @@
 package ru.сourses.geometry;
 
+import java.util.Objects;
+
 public class Line {
     Point startPoint;
     Point endPoint;
@@ -26,5 +28,17 @@ public class Line {
     @Override
     public String toString() {
         return "Линия от " + this.startPoint.toString() + " до " + this.endPoint.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Line line = (Line) o;
+        return Objects.equals(startPoint, line.startPoint) && Objects.equals(endPoint, line.endPoint);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(startPoint, endPoint);
     }
 }
