@@ -74,3 +74,32 @@
         System.out.println("После ru.сourses.geometry.PolyLine: " + polyLine.toString());
         lines = polyLine.getLines();
         System.out.println("Массив линий: " + Arrays.toString(lines));
+
+                Scanner scanner = new Scanner(System.in);
+                List<Double> nums = new ArrayList<>();
+                double sum = 0;
+
+                System.out.println("Для завершения ввода чисел введите: exit");
+                while (true) {
+
+                    System.out.print("Введите число: ");
+
+                    String inputStr = scanner.nextLine();
+                    if (inputStr.equals("exit")) break;
+
+                    double numDouble;
+                    try {
+                        numDouble = Double.parseDouble(inputStr);
+                    } catch (NumberFormatException e) {
+                        System.out.println("Это не число");
+                        continue;
+                    }
+
+                    nums.add(numDouble);
+                }
+
+                for (double num : nums) {
+                    sum += num;
+                }
+
+                System.out.println("Сумма: " + sum);

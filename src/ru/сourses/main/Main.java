@@ -1,38 +1,28 @@
 package ru.сourses.main;
 
+import ru.сourses.collections.Module10;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        List<Double> nums = new ArrayList<>();
-        double sum = 0;
-
-        System.out.println("Для завершения ввода чисел введите: exit");
-        while (true) {
-
-            System.out.print("Введите число: ");
-
-            String inputStr = scanner.nextLine();
-            if (inputStr.equals("exit")) break;
-
-            double numDouble;
-            try {
-                numDouble = Double.parseDouble(inputStr);
-            } catch (NumberFormatException e) {
-                System.out.println("Это не число");
-                continue;
-            }
-
-            nums.add(numDouble);
+        //10.1
+        int size = 4;
+        List<Integer> listInt = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            listInt.add(i);
         }
 
-        for (double num : nums) {
-            sum += num;
-        }
+        Module10.listPairChange(listInt);
 
-        System.out.println("Сумма: " + sum);
+        //10.2
+        Module10.bubbleSort(new int[]{1, 3, 2, 5, 4, 6});
+
+        //10.3
+        Module10.reverse(new int[]{1, 3, 2, 5, 4, 6});
+        Module10.reverse(new ArrayList<>(Arrays.asList(1,2,4,5,6)));
+
     }
 }
