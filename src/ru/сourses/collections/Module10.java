@@ -3,6 +3,8 @@ package ru.сourses.collections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Module10 {
 
@@ -53,5 +55,17 @@ public class Module10 {
         }
 
         System.out.println("10.3 list: " + intList);
+    }
+
+
+    //10.2.1
+    public static String getStringFromStream(Stream<String> stringStream) {
+        return stringStream.collect(Collectors.joining(" "));
+    }
+
+    //10.2.2
+    public static void printList(ArrayList<Integer> list) {
+        System.out.print("10.2.2:");
+        list.forEach(item -> System.out.print(" " + item));
     }
 }
