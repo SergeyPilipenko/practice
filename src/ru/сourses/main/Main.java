@@ -1,5 +1,7 @@
 package ru.сourses.main;
 
+import ru.сourses.collections.Cat;
+import ru.сourses.collections.Dog;
 import ru.сourses.collections.Module10;
 
 import java.util.ArrayList;
@@ -8,7 +10,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException {
         //10.1
         int size = 4;
         List<Integer> listInt = new ArrayList<>();
@@ -31,6 +33,17 @@ public class Main {
 
         //10.2.2
         Module10.printList(new ArrayList<>(Arrays.asList(1, 2, 4, 5, 6)));
+
+        //10.3
+        Cat cat = new Cat("Vasya", 10, new ArrayList<>(Arrays.asList("Anton", "Oleg", "Igor")));
+        System.out.println("10.3: " + cat);
+        Module10.resetClass(cat);
+        System.out.println(cat);
+
+        Dog dog = new Dog("Moscow","Jack",3);
+        System.out.println(dog);
+        Module10.resetClass(dog);
+        System.out.println(dog);
 
     }
 }

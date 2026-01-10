@@ -1,5 +1,6 @@
 package ru.сourses.collections;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -67,5 +68,35 @@ public class Module10 {
     public static void printList(ArrayList<Integer> list) {
         System.out.print("10.2.2:");
         list.forEach(item -> System.out.print(" " + item));
+    }
+
+    //10.3.1
+    public static void resetClass(Object obj) throws IllegalAccessException {
+        if (obj == null) {
+            return;
+        }
+        //Получаем класс объекта
+        Class<?> clazz = obj.getClass();
+
+        // Получаем все поля класса (включая приватные)
+        Field[] fields = clazz.getDeclaredFields();
+
+        for (Field field : fields) {
+            // Пропускаем примитивы
+            if (field.getType().isPrimitive()) {
+                continue;
+            }
+
+            // Для статических полей
+            if (java.lang.reflect.Modifier.isStatic(field.getModifiers())) {
+                field.setAccessible(true);
+                field.set(null, null); // null как объект-владелец для статических полей
+            }
+            // Для нестатических полей
+            else {
+                field.setAccessible(true);
+                field.set(obj, null);
+            }
+        }
     }
 }
