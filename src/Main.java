@@ -22,16 +22,13 @@ public class Main {
         System.out.println("Длина замкнутой ломанной: " + closedPolyLine.getLength());
 
         System.out.println("-----printMeasurable-----");
-        printMeasurable(polyLine);
-        printMeasurable(closedPolyLine);
+        printMeasurable(polyLine,closedPolyLine);
     }
 
-    static void printMeasurable(Measurable obj) {
-        System.out.println(obj);
-        System.out.println("Длина: " + obj.getLength());
+    static void printMeasurable(Measurable ...shapes) {
+       for(Measurable shape: shapes) {
+           System.out.println(shape);
+           System.out.println("Длина: " + shape.getLength());
+       }
     }
-}
-
-interface Measurable {
-    double getLength();
 }
