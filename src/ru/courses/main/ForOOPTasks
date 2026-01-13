@@ -55,7 +55,7 @@
                 new Point(5, 3),
                 new Point(9, 9));
 
-        System.out.println("До ru.сourses.geometry.PolyLine: " + polyLine.toString());
+        System.out.println("До ru.courses.geometry.PolyLine: " + polyLine.toString());
         System.out.println("Длина ломанной: " + polyLine.getLength());
 
         Line[] lines = polyLine.getLines();
@@ -71,6 +71,6 @@
 
         polyLine.pointsArr[1].x = 12;
 
-        System.out.println("После ru.сourses.geometry.PolyLine: " + polyLine.toString());
+        System.out.println("После ru.courses.geometry.PolyLine: " + polyLine.toString());
         lines = polyLine.getLines();
         System.out.println("Массив линий: " + Arrays.toString(lines));
