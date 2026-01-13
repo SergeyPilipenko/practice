@@ -1,4 +1,4 @@
-package ru.сourses.people;
+package ru.courses.people;
 
 import java.util.ArrayList;
 import java.util.Arrays;

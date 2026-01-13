@@ -1,4 +1,4 @@
-package ru.сourses.basics;
+package ru.courses.basics;
 
 public class Module4 {
 

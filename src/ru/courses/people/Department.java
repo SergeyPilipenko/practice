@@ -1,4 +1,4 @@
-package ru.сourses.people;
+package ru.courses.people;
 
 public class Department {
     private String name;
